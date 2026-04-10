@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikkim Smart World Tourism</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-logo">
+                <h1>Sikkim<span>Tourism</span></h1>
+            </div>
+            <div class="loading-spinner">
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+                <div class="spinner-ring"></div>
+            </div>
+            <p class="loading-text">Discovering the Beauty of Sikkim...</p>
+        </div>
+    </div>
+
+    <!-- Background Particles -->
+    <div id="particles-js"></div>
+
+    <header data-aos="fade-down" data-aos-duration="1000">
+        <nav>
+            <div class="logo">
+                <h1 class="animated-logo">Sikkim<span>Tourism</span></h1>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="active nav-link">Home</a></li>
+                <li><a href="#nature" class="nav-link">Nature</a></li>
+                <li><a href="#culture" class="nav-link">Culture</a></li>
+                <li><a href="#adventure" class="nav-link">Adventure</a></li>
+                <li><a href="#wellness" class="nav-link">Wellness</a></li>
+                <li><a href="#eco-tourism" class="nav-link">Eco-Tourism</a></li>
+                <li><a href="#ar-experience" class="highlight nav-link">AR Experience</a></li>
+                <li><a href="#smart-features" class="highlight nav-link"><i class="fas fa-brain"></i> Smart Features</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="hero-slide active" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1544735716-392fe2489ffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                <div class="hero-content" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
+                    <h1 class="hero-title">Discover Sikkim</h1>
+                    <h2 class="hero-subtitle">Smart Tourism Explorer</h2>
+                    <p class="hero-description">Experience the perfect blend of nature, culture, adventure, wellness, and eco-tourism with cutting-edge technology</p>
+                    <div class="hero-buttons">
+                        <a href="#ai-planner" class="btn primary btn-animated">Plan My Trip with AI</a>
+                        <a href="#ar-experience" class="btn secondary btn-animated">Try AR Experience</a>
+                        <a href="#" class="btn tertiary btn-animated" id="open-chatbot">Ask Our AI Assistant</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                <div class="hero-content">
+                    <h1 class="hero-title">Majestic Mountains</h1>
+                    <h2 class="hero-subtitle">Kanchenjunga Awaits</h2>
+                    <p class="hero-description">Witness the third highest peak in the world and explore pristine mountain landscapes</p>
+                    <div class="hero-buttons">
+                        <a href="#nature" class="btn primary btn-animated">Explore Nature</a>
+                        <a href="#adventure" class="btn secondary btn-animated">Adventure Tours</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-slide" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+                <div class="hero-content">
+                    <h1 class="hero-title">Cultural Heritage</h1>
+                    <h2 class="hero-subtitle">Ancient Monasteries</h2>
+                    <p class="hero-description">Immerse yourself in Buddhist culture and spiritual traditions</p>
+                    <div class="hero-buttons">
+                        <a href="#culture" class="btn primary btn-animated">Cultural Tours</a>
+                        <a href="#wellness" class="btn secondary btn-animated">Wellness Retreats</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Hero Navigation -->
+        <div class="hero-nav">
+            <button class="hero-nav-btn active" data-slide="0"></button>
+            <button class="hero-nav-btn" data-slide="1"></button>
+            <button class="hero-nav-btn" data-slide="2"></button>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+            <div class="floating-element" style="top: 20%; left: 10%; animation-delay: 0s;">
+                <i class="fas fa-mountain"></i>
+            </div>
+            <div class="floating-element" style="top: 60%; left: 85%; animation-delay: 1s;">
+                <i class="fas fa-leaf"></i>
+            </div>
+            <div class="floating-element" style="top: 80%; left: 15%; animation-delay: 2s;">
+                <i class="fas fa-om"></i>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="2000">
+            <div class="scroll-arrow">
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <span>Scroll to Explore</span>
+        </div>
+    </section>
+
+    <section id="ai-planner" class="ai-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">AI Trip Planner</h2>
+                <p class="section-subtitle">Let our artificial intelligence create a personalized itinerary based on your preferences</p>
+            </div>
+            <div class="ai-form" data-aos="fade-up" data-aos-delay="200">
+                <div class="form-group">
+                    <label for="days"><i class="fas fa-calendar-alt"></i> Number of Days</label>
+                    <div class="input-group">
+                        <input type="number" id="days" min="1" max="30" value="3">
+                        <span class="input-icon"><i class="fas fa-calendar"></i></span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-heart"></i> Interests</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="nature">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-tree"></i> Nature
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="culture">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-temple-buddhist"></i> Culture
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="adventure">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-mountain"></i> Adventure
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="wellness">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-spa"></i> Wellness
+                        </label>
+                        <label class="checkbox-item">
+                            <input type="checkbox" value="eco">
+                            <span class="checkmark"></span>
+                            <i class="fas fa-leaf"></i> Eco-Tourism
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="budget"><i class="fas fa-wallet"></i> Budget Range</label>
+                    <div class="select-group">
+                        <select id="budget">
+                            <option value="budget">Budget Friendly</option>
+                            <option value="mid" selected>Mid Range</option>
+                            <option value="luxury">Luxury</option>
+                        </select>
+                        <i class="fas fa-chevron-down select-icon"></i>
+                    </div>
+                </div>
+                <button id="generate-plan" class="btn primary btn-animated btn-pulse">
+                    <i class="fas fa-magic"></i> Generate Itinerary
+                </button>
+            </div>
+            <div id="ai-result" class="ai-result hidden" data-aos="fade-up">
+                <h3>Your Personalized Itinerary</h3>
+                <div id="itinerary-content"></div>
+                <button id="save-itinerary" class="btn secondary btn-animated">
+                    <i class="fas fa-download"></i> Save Itinerary
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="nature" class="feature-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Natural Wonders</h2>
+                <p class="section-subtitle">Explore the breathtaking landscapes of Sikkim, from snow-capped mountains to lush valleys</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-img-container">
+                        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="feature-overlay">
+                            <div class="feature-icon">
+                                <i class="fas fa-mountain"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Kanchenjunga</h3>
+                        <p>The third highest mountain in the world offers spectacular views and trekking opportunities</p>
+                        <div class="feature-stats">
+                            <div class="stat">
+                                <i class="fas fa-ruler-vertical"></i>
+                                <span>8,586m</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-thermometer-quarter"></i>
+                                <span>-15°C</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-small btn-animated">Explore in AR</a>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-img-container">
+                        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1544737151681-6e4de999de2c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="feature-overlay">
+                            <div class="feature-icon">
+                                <i class="fas fa-water"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Tsomgo Lake</h3>
+                        <p>A glacial lake at an altitude of 12,400 ft that changes colors with the seasons</p>
+                        <div class="feature-stats">
+                            <div class="stat">
+                                <i class="fas fa-ruler-vertical"></i>
+                                <span>3,753m</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-snowflake"></i>
+                                <span>Frozen Winter</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-small btn-animated">Explore in AR</a>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-img-container">
+                        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1518837695005-2083093ee35b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="feature-overlay">
+                            <div class="feature-icon">
+                                <i class="fas fa-tint"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Seven Sisters Waterfall</h3>
+                        <p>A magnificent cascade of seven waterfalls flowing adjacent to each other</p>
+                        <div class="feature-stats">
+                            <div class="stat">
+                                <i class="fas fa-ruler-vertical"></i>
+                                <span>300ft</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-eye"></i>
+                                <span>Best View</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-small btn-animated">Explore in AR</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="culture" class="feature-section alt-bg">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Cultural Heritage</h2>
+                <p class="section-subtitle">Immerse yourself in the rich cultural tapestry of Sikkim with its monasteries, festivals, and traditions</p>
+            </div>
+            <div class="feature-grid">
+                <div class="feature-card" data-aos="fade-right" data-aos-delay="100">
+                    <div class="feature-img-container">
+                        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="feature-overlay">
+                            <div class="feature-icon">
+                                <i class="fas fa-temple-buddhist"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Rumtek Monastery</h3>
+                        <p>One of the most important Buddhist monasteries in Sikkim with stunning architecture</p>
+                        <div class="feature-stats">
+                            <div class="stat">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>1966</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-users"></i>
+                                <span>300 Monks</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-small btn-animated">Virtual Tour</a>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-right" data-aos-delay="200">
+                    <div class="feature-img-container">
+                        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1544965503-7ad532e2c97a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="feature-overlay">
+                            <div class="feature-icon">
+                                <i class="fas fa-masks-theater"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Losar Festival</h3>
+                        <p>Experience the vibrant Tibetan New Year celebrations with traditional dances and rituals</p>
+                        <div class="feature-stats">
+                            <div class="stat">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Feb-Mar</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-clock"></i>
+                                <span>15 Days</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-small btn-animated">Virtual Tour</a>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-right" data-aos-delay="300">
+                    <div class="feature-img-container">
+                        <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1593693411518-5ba02f6cdb7f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                        <div class="feature-overlay">
+                            <div class="feature-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="feature-content">
+                        <h3>Traditional Crafts</h3>
+                        <p>Discover the intricate handicrafts and textiles made by local artisans</p>
+                        <div class="feature-stats">
+                            <div class="stat">
+                                <i class="fas fa-tools"></i>
+                                <span>100+ Crafts</span>
+                            </div>
+                            <div class="stat">
+                                <i class="fas fa-star"></i>
+                                <span>Authentic</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-small btn-animated">Virtual Tour</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <body>
+        <b>
+            <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d452652.5472282834!2d88.33042237462143!3d27.53320023639893!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e6a56a5805eafb%3A0x73d62c1b1834b76a!2sSikkim!5e0!3m2!1sen!2sin!4v1663392828188!5m2!1sen!2sin" 
+  width="600" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+        </b>
+    </body>
+
+    <section id="adventure" class="feature-section">
+        <div class="adventure-bg">
+            <div class="adventure-overlay"></div>
+            <div class="container">
+                <div class="section-header" data-aos="fade-up">
+                    <h2 class="section-title">Adventure Tourism</h2>
+                    <p class="section-subtitle">Get your adrenaline pumping with thrilling activities amidst stunning landscapes</p>
+                </div>
+                <div class="feature-grid">
+                    <div class="feature-card" data-aos="fade-left" data-aos-delay="100">
+                        <div class="feature-img-container">
+                            <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="feature-overlay">
+                                <div class="feature-icon">
+                                    <i class="fas fa-hiking"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Goecha La Trek</h3>
+                            <p>A challenging trek offering close views of Kanchenjunga and other Himalayan peaks</p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <i class="fas fa-route"></i>
+                                    <span>90km Trail</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-clock"></i>
+                                    <span>8-10 Days</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-small btn-animated">Trail Map</a>
+                        </div>
+                    </div>
+                    <div class="feature-card" data-aos="fade-left" data-aos-delay="200">
+                        <div class="feature-img-container">
+                            <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1544551763-46a013bb70d5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="feature-overlay">
+                                <div class="feature-icon">
+                                    <i class="fas fa-swimmer"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>River Rafting</h3>
+                            <p>Navigate the rapids of Teesta and Rangit rivers for an exhilarating experience</p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <i class="fas fa-water"></i>
+                                    <span>Grade II-IV</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-users"></i>
+                                    <span>6-8 People</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-small btn-animated">Trail Map</a>
+                        </div>
+                    </div>
+                    <div class="feature-card" data-aos="fade-left" data-aos-delay="300">
+                        <div class="feature-img-container">
+                            <div class="feature-img" style="background-image: url('https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');"></div>
+                            <div class="feature-overlay">
+                                <div class="feature-icon">
+                                    <i class="fas fa-parachute-box"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Paragliding</h3>
+                            <p>Soar above the valleys and mountains for a bird's eye view of Sikkim's landscape</p>
+                            <div class="feature-stats">
+                                <div class="stat">
+                                    <i class="fas fa-ruler-vertical"></i>
+                                    <span>500-1000m</span>
+                                </div>
+                                <div class="stat">
+                                    <i class="fas fa-certificate"></i>
+                                    <span>Certified</span>
+                                </div>
+                            </div>
+                            <a href="#" class="btn-small btn-animated">Trail Map</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="wellness" class="feature-section alt-bg">
+        <div class="container">
+            <h2>Wellness Retreats</h2>
+            <p>Rejuvenate your mind, body, and soul with traditional and modern wellness practices</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://source.unsplash.com/random/600x400/?hot,spring');"></div>
+                    <div class="feature-content">
+                        <h3>Hot Springs</h3>
+                        <p>Relax in the natural hot springs known for their therapeutic mineral properties</p>
+                        <a href="#" class="btn-small">Book Experience</a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://source.unsplash.com/random/600x400/?yoga,mountain');"></div>
+                    <div class="feature-content">
+                        <h3>Mountain Yoga Retreats</h3>
+                        <p>Practice yoga and meditation in serene mountain settings with expert guidance</p>
+                        <a href="#" class="btn-small">Book Experience</a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://source.unsplash.com/random/600x400/?ayurveda');"></div>
+                    <div class="feature-content">
+                        <h3>Traditional Healing</h3>
+                        <p>Experience ancient Sikkimese and Tibetan healing practices and herbal treatments</p>
+                        <a href="#" class="btn-small">Book Experience</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="eco-tourism" class="feature-section">
+        <div class="container">
+            <h2>Eco-Tourism Initiatives</h2>
+            <p>Participate in sustainable tourism practices that preserve Sikkim's natural beauty</p>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://source.unsplash.com/random/600x400/?organic,farm');"></div>
+                    <div class="feature-content">
+                        <h3>Organic Farm Stays</h3>
+                        <p>Stay at certified organic farms and learn about sustainable agricultural practices</p>
+                        <a href="#" class="btn-small">Learn More</a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://source.unsplash.com/random/600x400/?conservation');"></div>
+                    <div class="feature-content">
+                        <h3>Conservation Projects</h3>
+                        <p>Contribute to local conservation efforts protecting Sikkim's biodiversity</p>
+                        <a href="#" class="btn-small">Learn More</a>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img" style="background-image: url('https://source.unsplash.com/random/600x400/?village');"></div>
+                    <div class="feature-content">
+                        <h3>Village Tourism</h3>
+                        <p>Experience authentic rural life while supporting local communities</p>
+                        <a href="#" class="btn-small">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="ar-experience" class="ar-section">
+        <div class="container">
+            <h2>Augmented Reality Experience</h2>
+            <p>Explore Sikkim's attractions through immersive AR technology</p>
+            <div class="ar-demo">
+                <div class="ar-placeholder">
+                    <i class="fas fa-vr-cardboard"></i>
+                    <p>Point your camera at this area to activate AR experience</p>
+                </div>
+                <div class="ar-instructions">
+                    <h3>How to use AR features:</h3>
+                    <ol>
+                        <li>Allow camera access when prompted</li>
+                        <li>Point your device at open space</li>
+                        <li>Explore 3D models of Sikkim's landmarks</li>
+                        <li>Tap on models for more information</li>
+                    </ol>
+                    <button id="launch-ar" class="btn primary">Launch AR Experience</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="smart-features" class="smart-features-section">
+        <div class="container">
+            <h2>Smart Features</h2>
+            <p>Enhance your Sikkim experience with our intelligent, real-world integrated tools</p>
+            
+            <div class="smart-features-grid">
+                <!-- Smart Navigation -->
+                <div class="smart-feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3>🗺️ Smart Navigation</h3>
+                    <p>Safe travel routes, accident-prone areas, and eco-friendly paths</p>
+                    <div class="feature-actions">
+                        <button class="btn-small feature-btn" id="nav-routes-btn">Safe Routes</button>
+                        <button class="btn-small feature-btn" id="nav-eco-btn">Eco Paths</button>
+                        <button class="btn-small feature-btn danger" id="nav-danger-btn">Danger Zones</button>
+                    </div>
+                </div>
+                
+                <!-- Live Weather & Alerts -->
+                <div class="smart-feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-cloud-sun-rain"></i>
+                    </div>
+                    <h3>🌦️ Live Weather & Alerts</h3>
+                    <p>Real-time weather, landslide/flood alerts, and travel advisories</p>
+                    <div class="feature-actions">
+                        <button class="btn-small feature-btn" id="weather-btn">Current Weather</button>
+                        <button class="btn-small feature-btn danger" id="alerts-btn">Active Alerts</button>
+                        <button class="btn-small feature-btn" id="forecast-btn">Travel Forecast</button>
+                    </div>
+                </div>
+                
+                <!-- Safety & Emergency -->
+                <div class="smart-feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-first-aid"></i>
+                    </div>
+                    <h3>🚑 Safety & Emergency</h3>
+                    <p>Emergency services, nearest facilities, and quick SOS access</p>
+                    <div class="feature-actions">
+                        <button class="btn-small feature-btn" id="emergency-services-btn">Find Services</button>
+                        <button class="btn-small feature-btn danger sos-btn" id="sos-btn">SOS</button>
+                        <button class="btn-small feature-btn" id="safety-tips-btn">Safety Tips</button>
+                    </div>
+                </div>
+                
+                <!-- Local Food & Drinks -->
+                <div class="smart-feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>🥤 Local Food & Drinks</h3>
+                    <p>Traditional Sikkim beverages and dishes based on your location</p>
+                    <div class="feature-actions">
+                        <button class="btn-small feature-btn" id="local-food-btn">Local Cuisine</button>
+                        <button class="btn-small feature-btn" id="drinks-btn">Traditional Drinks</button>
+                        <button class="btn-small feature-btn" id="food-map-btn">Food Map</button>
+                    </div>
+                </div>
+                
+                <!-- Eco-Sustainability Meter -->
+                <div class="smart-feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>🏞️ Eco-Sustainability Meter</h3>
+                    <p>Track your tourism footprint and discover greener travel options</p>
+                    <div class="feature-actions">
+                        <button class="btn-small feature-btn" id="eco-footprint-btn">My Footprint</button>
+                        <button class="btn-small feature-btn" id="eco-tips-btn">Green Tips</button>
+                        <button class="btn-small feature-btn" id="eco-challenge-btn">Eco Challenge</button>
+                    </div>
+                </div>
+                
+                <!-- Voice & Audio Sense -->
+                <div class="smart-feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-microphone-alt"></i>
+                    </div>
+                    <h3>🎙️ Voice & Audio Sense</h3>
+                    
+                    <p>Hands-free assistance and audio-based AR storytelling at landmarks</p>
+                    <div class="feature-actions">
+                        <button class="btn-small feature-btn" id="voice-assist-btn">Voice Assistant</button>
+                        <button class="btn-small feature-btn" id="audio-stories-btn">Audio Stories</button>
+                        <button class="btn-small feature-btn" id="voice-nav-btn">Voice Navigation</button>
+                    </div>
+                </div>
+                
+                <!-- AR/VR Exploration -->
+                <div class="smart-feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-vr-cardboard"></i>
+                    </div>
+                    <h3>🕶️ AR/VR Exploration</h3>
+                    <p>Immersive experiences of historical, cultural, and natural attractions</p>
+                    <div class="feature-actions">
+                        <button class="btn-small feature-btn" id="ar-sites-btn">AR Sites</button>
+                        <button class="btn-small feature-btn" id="vr-tours-btn">VR Tours</button>
+                        <button class="btn-small feature-btn" id="time-travel-btn">Time Travel</button>
+                    </div>
+                </div>
+                
+                <!-- Transport & Booking -->
+                <div class="smart-feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bus-alt"></i>
+                    </div>
+                    <h3>🚌 Transport & Booking</h3>
+                    <p>Real-time availability for buses, taxis, homestays, and eco-lodges</p>
+                    <div class="feature-actions">
+                        <button class="btn-small feature-btn" id="transport-btn">Find Transport</button>
+                        <button class="btn-small feature-btn" id="accommodation-btn">Accommodations</button>
+                        <button class="btn-small feature-btn" id="booking-btn">Quick Book</button>
+                    </div>
+                </div>
+                
+                <!-- Accessibility Tools -->
+                <div class="smart-feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-wheelchair"></i>
+                    </div>
+                    <h3>♿ Accessibility Tools</h3>
+                    <p>Features for differently-abled tourists including accessible routes</p>
+                    <div class="feature-actions">
+                        <button class="btn-small feature-btn" id="accessible-routes-btn">Accessible Routes</button>
+                        <button class="btn-small feature-btn" id="audio-guides-btn">Audio Guides</button>
+                        <button class="btn-small feature-btn" id="accessibility-map-btn">Access Map</button>
+                    </div>
+                </div>
+                
+                <!-- Tourism Insights -->
+                <div class="smart-feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>📊 Tourism Insights</h3>
+                    <p>Charts, sustainability statistics, and travel trends for awareness</p>
+                    <div class="feature-actions">
+                        <button class="btn-small feature-btn" id="tourism-stats-btn">Tourism Stats</button>
+                        <button class="btn-small feature-btn" id="eco-impact-btn">Eco Impact</button>
+                        <button class="btn-small feature-btn" id="travel-trends-btn">Travel Trends</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="sustainability" class="stats-section">
+        <div class="container">
+            <h2>Sustainability Impact</h2>
+            <p>See how smart tourism is making Sikkim more sustainable</p>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-chart">
+                        <canvas id="waste-reduction-chart"></canvas>
+                    </div>
+                    <h3>Waste Reduction</h3>
+                    <p>30% reduction in tourism-related waste since implementing smart solutions</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-chart">
+                        <canvas id="local-economy-chart"></canvas>
+                    </div>
+                    <h3>Local Economy</h3>
+                    <p>45% increase in revenue for local businesses through smart tourism initiatives</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-chart">
+                        <canvas id="carbon-footprint-chart"></canvas>
+                    </div>
+                    <h3>Carbon Footprint</h3>
+                    <p>25% decrease in carbon emissions from tourism activities</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonial-section">
+        <div class="container">
+            <h2>Explorer Stories</h2>
+            <p>Hear from travelers who experienced Sikkim through our smart tourism platform</p>
+            <div class="testimonial-slider">
+                <div class="testimonial-slide active">
+                    <div class="testimonial-content">
+                        <p>"The AR experience brought Sikkim's history to life in ways I never imagined. Being able to see ancient monasteries as they looked centuries ago while standing at the actual location was mind-blowing!"</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah J.">
+                            <div>
+                                <h4>Sarah J.</h4>
+                                <p>Cultural Explorer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"The AI trip planner created the perfect itinerary for my adventure-focused vacation. It balanced challenging treks with recovery days and even suggested local experiences I would have missed otherwise."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael T.">
+                            <div>
+                                <h4>Michael T.</h4>
+                                <p>Adventure Seeker</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-slide">
+                    <div class="testimonial-content">
+                        <p>"As someone passionate about sustainable travel, I was impressed by how the platform connected me with eco-friendly accommodations and experiences. The real-time impact tracking helped me make better choices."</p>
+                        <div class="testimonial-author">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya M.">
+                            <div>
+                                <h4>Priya M.</h4>
+                                <p>Eco-Conscious Traveler</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section id="download" class="cta-section">
+        <div class="container">
+            <h2>Take Sikkim Explorer With You</h2>
+            <p>Download our mobile app for offline access to maps, AR experiences, and personalized recommendations</p>
+            <div class="app-download">
+                <a href="#" class="app-btn">
+                    <i class="fab fa-google-play"></i>
+                    <div>
+                        <span>GET IT ON</span>
+                        <strong>Google Play</strong>
+                    </div>
+                </a>
+                <a href="#" class="app-btn">
+                    <i class="fab fa-apple"></i>
+                    <div>
+                        <span>Download on the</span>
+                        <strong>App Store</strong>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Sikkim<span>Explorer</span></h3>
+                    <p>Smart tourism platform blending nature, culture, adventure, wellness, and eco-tourism with cutting-edge technology</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="#nature">Nature</a></li>
+                        <li><a href="#culture">Culture</a></li>
+                        <li><a href="#adventure">Adventure</a></li>
+                        <li><a href="#wellness">Wellness</a></li>
+                        <li><a href="#eco-tourism">Eco-Tourism</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Features</h4>
+                    <ul>
+                        <li><a href="#ai-planner">AI Trip Planner</a></li>
+                        <li><a href="#ar-experience">AR Experiences</a></li>
+                        <li><a href="#sustainability">Sustainability</a></li>
+                        <li><a href="#">Offline Maps</a></li>
+                        <li><a href="#">Local Guides</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Gangtok, Sikkim, India</li>
+                        <li><i class="fas fa-phone"></i> +91 1234567890</li>
+                        <li><i class="fas fa-envelope"></i> info@sikkimexplorer.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Sikkim Explorer. All rights reserved.</p>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chatbot -->
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-header">
+            <h3><i class="fas fa-robot"></i> Gemini AI Assistant</h3>
+            <button id="close-chatbot"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chatbot-location-info" id="chatbot-location-info">
+            <div class="location-indicator">
+                <i class="fas fa-map-marker-alt"></i> <span id="region-display">Detecting location...</span>
+            </div>
+            <div class="weather-indicator">
+                <i class="fas fa-cloud-sun"></i> <span id="weather-display">Checking weather...</span>
+            </div>
+        </div>
+        <div class="chatbot-messages" id="chatbot-messages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    
+                    <p>
+                        
+                        
+                        
+                        
+                        Hello! I'm your Sikkim tourism assistant powered by Google Gemini. How can I help you plan your perfect Sikkim adventure?</p>
+                </div>
+            </div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="user-input" placeholder="Ask me anything about Sikkim...">
+            <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+
+    <button class="chatbot-toggle" id="chatbot-toggle">
+        <i class="fas fa-comments"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+        
+        // Initialize Particles.js
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#2e8b57' },
+                shape: {
+                    type: 'circle',
+                    stroke: { width: 0, color: '#000000' }
+                },
+                opacity: {
+                    value: 0.5,
+                    random: false,
+                    anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
+                },
+                size: {
+                    value: 3,
+                    random: true,
+                    anim: { enable: false, speed: 40, size_min: 0.1, sync: false }
+                },
+                line_linked: {
+                    enable: true,
+                    distance: 150,
+                    color: '#2e8b57',
+                    opacity: 0.4,
+                    width: 1
+                },
+                move: {
+                    enable: true,
+                    speed: 6,
+                    direction: 'none',
+                    random: false,
+                    straight: false,
+                    out_mode: 'out',
+                    bounce: false
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: {
+                    onhover: { enable: true, mode: 'repulse' },
+                    onclick: { enable: true, mode: 'push' },
+                    resize: true
+                },
+                modes: {
+                    grab: { distance: 400, line_linked: { opacity: 1 } },
+                    bubble: { distance: 400, size: 40, duration: 2, opacity: 8, speed: 3 },
+                    repulse: { distance: 200, duration: 0.4 },
+                    push: { particles_nb: 4 },
+                    remove: { particles_nb: 2 }
+                }
+            },
+            retina_detect: true
+        });
+        
+        // Loading screen animation
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                }, 500);
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
